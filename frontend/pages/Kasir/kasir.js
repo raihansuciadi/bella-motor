@@ -11,7 +11,7 @@ async function loadBarang(){
 try{
 
 const response = await fetch(
-"http://localhost:3000/api/barang"
+"https://bella-motor-production.up.railway.app/api/barang"
 );
 
 semuaBarang = await response.json();
@@ -634,7 +634,7 @@ for(let item of keranjang){
 
 const response = await fetch(
 
-"http://localhost:3000/api/transaksi",
+"https://bella-motor-production.up.railway.app/api/transaksi",
 
 {
 

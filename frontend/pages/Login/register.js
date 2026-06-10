@@ -36,7 +36,7 @@ try{
 
 const response=
 await fetch(
-"http://localhost:3000/api/register",
+"https://bella-motor-production.up.railway.app/api/register",
 {
 
 method:"POST",

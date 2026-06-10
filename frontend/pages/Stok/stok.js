@@ -12,7 +12,7 @@ async function ambilBarang(){
 
 const response = await fetch(
 
-"http://localhost:3000/api/barang"
+"https://bella-motor-production.up.railway.app/api/barang"
 
 );
 
@@ -207,7 +207,7 @@ if(editId){
 
 await fetch(
 
-`http://localhost:3000/api/barang/${editId}`,
+`https://bella-motor-production.up.railway.app/api/barang/${editId}`,
 
 {
 
@@ -245,7 +245,7 @@ else{
 
 await fetch(
 
-"http://localhost:3000/api/barang",
+"https://bella-motor-production.up.railway.app/api/barang",
 
 {
 
@@ -378,7 +378,7 @@ return;
 
 await fetch(
 
-`http://localhost:3000/api/barang/${id}`,
+`https://bella-motor-production.up.railway.app/api/barang/${id}`,
 
 {
 
@@ -465,7 +465,7 @@ document.getElementById("jumlahStok").value
 };
 
 await fetch(
-"http://localhost:3000/api/stokmasuk",
+"https://bella-motor-production.up.railway.app/api/stokmasuk",
 {
 method:"POST",
 headers:{

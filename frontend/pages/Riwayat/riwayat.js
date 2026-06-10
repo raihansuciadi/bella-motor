@@ -5,7 +5,7 @@ async function loadRiwayat(){
 try{
 
 const response = await fetch(
-"http://localhost:3000/api/riwayat"
+"https://bella-motor-production.up.railway.app/api/riwayat"
 );
 
 const data = await response.json();
@@ -84,7 +84,7 @@ noTransaksiAktif = no;
 
 const response = await fetch(
 
-`http://localhost:3000/api/riwayat/${no}`
+`https://bella-motor-production.up.railway.app/api/riwayat/${no}`
 
 );
 
@@ -210,7 +210,7 @@ async function cetakStruk(){
 
 const response = await fetch(
 
-`http://localhost:3000/api/riwayat/${noTransaksiAktif}`
+`https://bella-motor-production.up.railway.app/api/riwayat/${noTransaksiAktif}`
 
 );
 

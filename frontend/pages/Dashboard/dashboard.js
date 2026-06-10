@@ -3,7 +3,7 @@ async function loadDashboard(){
 try{
 
 const response = await fetch(
-"http://localhost:3000/api/dashboard"
+"https://bella-motor-production.up.railway.app/api/dashboard"
 );
 
 const data = await response.json();
@@ -84,7 +84,7 @@ jenis="harian"
 try{
 
 const response = await fetch(
-`http://localhost:3000/api/omzet/${jenis}`
+`https://bella-motor-production.up.railway.app/api/omzet/${jenis}`
 );
 
 const data = await response.json();

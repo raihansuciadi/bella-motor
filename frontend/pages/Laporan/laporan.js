@@ -9,7 +9,7 @@ jenis="harian"
 try{
 
 const response = await fetch(
-`http://localhost:3000/api/laporan/${jenis}`
+`https://bella-motor-production.up.railway.app/api/laporan/${jenis}`
 );
 
 const data = await response.json();
@@ -65,7 +65,7 @@ jenis="harian"
 try{
 
 const response = await fetch(
-`http://localhost:3000/api/laporan-barang/${jenis}`
+`https://bella-motor-production.up.railway.app/api/laporan-barang/${jenis}`
 );
 
 const data = await response.json();
@@ -118,7 +118,7 @@ jenis="harian"
 try{
 
 const response = await fetch(
-`http://localhost:3000/api/laporan-masuk/${jenis}`
+`https://bella-motor-production.up.railway.app/api/laporan-masuk/${jenis}`
 );
 
 const data = await response.json();
@@ -219,7 +219,7 @@ y += 10;
 
 const penjualan =
 await fetch(
-`http://localhost:3000/api/laporan/${jenis}`
+`https://bella-motor-production.up.railway.app/api/laporan/${jenis}`
 );
 
 const dataPenjualan =
@@ -259,7 +259,7 @@ y += 10;
 
 const barang =
 await fetch(
-`http://localhost:3000/api/laporan-barang/${jenis}`
+`https://bella-motor-production.up.railway.app/api/laporan-barang/${jenis}`
 );
 
 const dataBarang =
@@ -299,7 +299,7 @@ y += 10;
 
 const masuk =
 await fetch(
-`http://localhost:3000/api/laporan-masuk/${jenis}`
+`https://bella-motor-production.up.railway.app/api/laporan-masuk/${jenis}`
 );
 
 const dataMasuk =
