@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Laporan Bella Motor</title>
+
+<link rel="stylesheet" href="laporan.css">
+
+</head>
+
+<body>
+
+<div class="container-layout">
+
+<div class="sidebar">
+
+<h2>BELLA MOTOR</h2>
+
+<div class="menu">
+
+<div class="menu-item"
+onclick="location.href='../Dashboard/dashboard.html'">
+📊 Dashboard
+</div>
+
+<div class="menu-item"
+onclick="location.href='../Kasir/kasir.html'">
+💰 Kasir
+</div>
+
+<div class="menu-item"
+onclick="location.href='../Stok/stok.html'">
+📦 Stok
+</div>
+
+<div class="menu-item"
+onclick="location.href='../Riwayat/riwayat.html'">
+📜 Riwayat
+</div>
+
+<div class="menu-item active"
+onclick="location.href='../Laporan/laporan.html'">
+📈 Laporan
+</div>
+
+</div>
+
+<div
+class="logout"
+onclick="logout()">
+
+🚪 Logout
+
+</div>
+
+</div>
+
+<div class="main">
+
+<div class="laporan-box">
+
+<h1>
+📈 Laporan Penjualan
+</h1>
+
+<select id="filterLaporan">
+
+<option value="harian">
+Harian
+</option>
+
+<option value="mingguan">
+Mingguan
+</option>
+
+<option value="bulanan">
+Bulanan
+</option>
+
+<option value="tahunan">
+Tahunan
+</option>
+
+</select>
+
+<button
+onclick="downloadLaporan()">
+
+⬇ Download Laporan
+
+</button>
+
+<br><br>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Periode</th>
+<th>Jumlah Transaksi</th>
+<th>Omzet</th>
+
+</tr>
+
+</thead>
+
+<tbody id="laporan">
+
+</tbody>
+
+</table>
+
+<br><br><br>
+
+<h1>
+📦 Laporan Barang
+</h1>
+
+<select id="filterBarang">
+
+<option value="harian">
+Harian
+</option>
+
+<option value="mingguan">
+Mingguan
+</option>
+
+<option value="bulanan">
+Bulanan
+</option>
+
+<option value="tahunan">
+Tahunan
+</option>
+
+</select>
+
+<br><br>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Nama Barang</th>
+<th>Jumlah Terjual</th>
+<th>Sisa Stok</th>
+
+</tr>
+
+</thead>
+
+<tbody id="laporanBarang">
+
+</tbody>
+
+</table>
+
+<br><br><br>
+
+<h1>
+📥 Laporan Barang Masuk
+</h1>
+
+<select id="filterMasuk">
+
+<option value="harian">
+Harian
+</option>
+
+<option value="mingguan">
+Mingguan
+</option>
+
+<option value="bulanan">
+Bulanan
+</option>
+
+<option value="tahunan">
+Tahunan
+</option>
+
+</select>
+
+<br><br>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Nama Barang</th>
+<th>Jumlah Masuk</th>
+
+</tr>
+
+</thead>
+
+<tbody id="laporanMasuk">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function logout(){
+
+localStorage.removeItem(
+"token"
+);
+
+location.href=
+"../Login/login.html";
+
+}
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="laporan.js"></script>
+
+</body>
+
+</html>

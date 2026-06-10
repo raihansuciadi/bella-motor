@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Kasir Bella Motor</title>
+
+<link rel="stylesheet" href="kasir.css">
+
+</head>
+
+<body>
+
+<div class="container-layout">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h2>BELLA MOTOR</h2>
+
+<div class="menu">
+
+<div class="menu-item"
+onclick="location.href='../Dashboard/dashboard.html'">
+📊 Dashboard
+</div>
+
+<div class="menu-item active"
+onclick="location.href='../Kasir/kasir.html'">
+💰 Kasir
+</div>
+
+<div class="menu-item"
+onclick="location.href='../Stok/stok.html'">
+📦 Stok
+</div>
+
+<div class="menu-item"
+onclick="location.href='../Riwayat/riwayat.html'">
+📜 Riwayat
+</div>
+
+<div class="menu-item"
+onclick="location.href='../Laporan/laporan.html'">
+📈 Laporan
+</div>
+
+</div>
+
+<div
+class="logout"
+onclick="logout()">
+
+🚪 Logout
+
+</div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+<div class="kasir-box">
+
+<h1>Kasir Bella Motor</h1>
+
+<div class="top">
+
+<div class="left">
+
+<div class="row">
+
+<label>No Transaksi</label>
+
+<input
+id="notransaksi"
+readonly>
+
+</div>
+
+<div class="row">
+
+<label>Tanggal</label>
+
+<input
+type="date"
+id="tanggal">
+
+</div>
+
+<div class="row">
+
+<label>Kode Barang</label>
+
+<input
+id="kodeBarang"
+placeholder="Ketik kode barang">
+
+</div>
+
+<div class="row">
+
+<label>Nama Barang</label>
+
+<input
+list="listBarang"
+id="namaBarang"
+placeholder="Cari nama barang">
+
+<datalist id="listBarang">
+
+</datalist>
+
+</div>
+
+</div>
+
+<div class="right">
+
+<h1 id="grandTotal">
+
+Rp0
+
+</h1>
+
+</div>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Kode</th>
+<th>Nama</th>
+<th>Qty</th>
+<th>Harga</th>
+<th>Total</th>
+<th>Aksi</th>
+
+</tr>
+
+</thead>
+
+<tbody id="keranjang">
+
+</tbody>
+
+</table>
+
+<div class="bottom">
+
+<div>
+
+Subtotal :
+
+<span id="subtotal">
+
+Rp0
+
+</span>
+
+</div>
+
+<div>
+
+Metode :
+
+<select id="metodeBayar">
+
+<option value="Tunai">
+Tunai
+</option>
+
+<option value="Transfer">
+Transfer
+</option>
+
+<option value="QRIS">
+QRIS
+</option>
+
+</select>
+
+</div>
+
+<div id="bayarBox">
+
+Bayar :
+
+<input
+id="bayar"
+placeholder="Masukkan uang">
+
+</div>
+
+<div id="kembalianBox">
+
+Kembalian :
+
+<span id="kembalian">
+
+Rp0
+
+</span>
+
+</div>
+
+<button onclick="prosesBayar()">
+
+Bayar
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- POPUP -->
+
+<div
+id="popup"
+class="popup">
+
+<div class="popup-box">
+
+<h2>
+
+✅ Transaksi Berhasil
+
+</h2>
+
+<p>
+
+Data transaksi berhasil disimpan
+
+</p>
+
+<button
+onclick="tutupPopup()">
+
+OK
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function logout(){
+
+localStorage.removeItem(
+"token"
+);
+
+location.href=
+"../Login/login.html";
+
+}
+
+</script>
+
+<script src="kasir.js"></script>
+
+</body>
+
+</html>

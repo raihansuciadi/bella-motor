@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Dashboard Bella Motor</title>
+
+<link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="sidebar">
+
+<h2>BELLA MOTOR</h2>
+
+<div class="menu">
+
+<div class="menu-item active"
+onclick="location.href='../Dashboard/dashboard.html'">
+📊 Dashboard
+</div>
+
+<div class="menu-item"
+onclick="location.href='../Kasir/kasir.html'">
+💰 Kasir
+</div>
+
+<div class="menu-item"
+onclick="location.href='../Stok/stok.html'">
+📦 Stok
+</div>
+
+<div class="menu-item"
+onclick="location.href='../Riwayat/riwayat.html'">
+📜 Riwayat
+</div>
+
+<div class="menu-item"
+onclick="location.href='../Laporan/laporan.html'">
+📈 Laporan
+</div>
+
+</div>
+
+<div
+class="logout"
+onclick="logout()">
+
+🚪 Logout
+
+</div>
+
+</div>
+
+<div class="main">
+
+<div class="dashboard-box">
+
+<h1>Dashboard Bella Motor</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Omzet Hari Ini</h3>
+
+<p id="omzet">
+
+Rp0
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Transaksi Hari Ini</h3>
+
+<p id="transaksi">
+
+0
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Stok Menipis</h3>
+
+<p id="stok">
+
+0
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Total Barang</h3>
+
+<p id="barang">
+
+0
+
+</p>
+
+</div>
+
+</div>
+
+<div class="notif-box">
+
+<h2>
+⚠️ Barang Stok Menipis
+</h2>
+
+<div id="stokMenipisList">
+
+Belum ada data
+
+</div>
+
+</div>
+
+<div class="chart-box">
+
+<div class="grafik-header">
+
+<h2>
+Grafik Omzet
+</h2>
+
+<select id="filterGrafik">
+
+<option value="harian">
+Harian
+</option>
+
+<option value="mingguan">
+Mingguan   
+</option>
+
+<option value="bulanan">
+Bulanan
+</option>
+
+<option value="tahunan">
+Tahunan
+</option>
+
+</select>
+
+</div>
+
+<canvas id="grafikOmzet"></canvas>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function logout(){
+
+localStorage.removeItem(
+"token"
+);
+
+location.href=
+"../Login/login.html";
+
+}
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>

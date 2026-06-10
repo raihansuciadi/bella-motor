@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+
+<title>Stok Bella Motor</title>
+
+<link rel="stylesheet"
+href="stok.css">
+
+</head>
+
+<body>
+
+<div class="container-layout">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h2>BELLA MOTOR</h2>
+
+<div class="menu">
+
+<div class="menu-item"
+onclick="location.href='../Dashboard/dashboard.html'">
+📊 Dashboard
+</div>
+
+<div class="menu-item"
+onclick="location.href='../Kasir/kasir.html'">
+💰 Kasir
+</div>
+
+<div class="menu-item active"
+onclick="location.href='../Stok/stok.html'">
+📦 Stok
+</div>
+
+<div class="menu-item"
+onclick="location.href='../Riwayat/riwayat.html'">
+📜 Riwayat
+</div>
+
+<div class="menu-item"
+onclick="location.href='../Laporan/laporan.html'">
+📈 Laporan
+</div>
+
+</div>
+
+<div
+class="logout"
+onclick="logout()">
+
+🚪 Logout
+
+</div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+<div class="stok-box">
+
+<h1>
+
+📦 Stok Barang Bella Motor
+
+</h1>
+
+<!-- MODE -->
+
+<div class="mode-box">
+
+<label>
+
+Mode :
+
+</label>
+
+<select
+id="modeStok"
+onchange="gantiMode()">
+
+<option value="barang">
+
+Barang Baru
+
+</option>
+
+<option value="stok">
+
+Stok Masuk
+
+</option>
+
+</select>
+
+</div>
+
+<!-- FORM BARANG -->
+
+<div
+class="form-box"
+id="formBarang">
+
+<input
+type="text"
+id="kode_barang"
+placeholder="Kode Barang">
+
+<input
+list="listKode"
+id="nama_barang"
+placeholder="Nama Barang">
+
+<datalist id="listKode">
+
+</datalist>
+
+<input
+type="text"
+id="kategori"
+placeholder="Kategori">
+
+<input
+type="number"
+id="stok"
+placeholder="Stok">
+
+<input
+type="number"
+id="harga_beli"
+placeholder="Harga Beli">
+
+<input
+type="number"
+id="harga_jual"
+placeholder="Harga Jual">
+
+<button
+onclick="tambahBarang()">
+
+Tambah Barang
+
+</button>
+
+</div>
+
+<!-- FORM STOK MASUK -->
+
+<div
+class="form-box"
+id="formStok"
+style="display:none;">
+
+<input
+type="text"
+id="kodeStok"
+placeholder="Kode Barang">
+
+<input
+type="text"
+id="namaStok"
+placeholder="Nama Barang"
+readonly>
+
+<input
+type="number"
+id="jumlahStok"
+placeholder="Jumlah Tambahan">
+
+<button
+onclick="tambahStokBarang()">
+
+Tambah Stok
+
+</button>
+
+</div>
+
+<!-- CARI -->
+
+<input
+type="text"
+id="cari"
+placeholder="Cari kode / nama..."
+onkeyup="cariBarang()">
+
+<!-- TABLE -->
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Kode</th>
+<th>Nama</th>
+<th>Kategori</th>
+<th>Stok</th>
+<th>Harga Beli</th>
+<th>Harga Jual</th>
+<th>Aksi</th>
+
+</tr>
+
+</thead>
+
+<tbody id="dataBarang">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function logout(){
+
+localStorage.removeItem(
+"token"
+);
+
+location.href=
+"../Login/login.html";
+
+}
+
+</script>
+
+<script src="stok.js"></script>
+
+</body>
+
+</html>
