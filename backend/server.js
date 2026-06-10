@@ -38,8 +38,8 @@ const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
 
-  console.log(
+console.log(
     `Server Bella Motor aktif di port ${PORT}`
-  );
+);
 
 });
