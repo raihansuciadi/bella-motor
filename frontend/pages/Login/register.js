@@ -1,77 +1,75 @@
-async function register(){
+async function register() {
 
-const nama=
-document.getElementById(
-"nama"
-).value
+    console.log("REGISTER DIKLIK");
 
-const username=
-document.getElementById(
-"username"
-).value
+    const nama = document.getElementById("nama").value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const konfirmasi = document.getElementById("konfirmasi").value;
 
-const password=
-document.getElementById(
-"password"
-).value
+    console.log("DATA INPUT:");
+    console.log({
+        nama,
+        username,
+        password,
+        konfirmasi
+    });
 
-const konfirmasi=
-document.getElementById(
-"konfirmasi"
-).value
+    if (password !== konfirmasi) {
 
+        document.getElementById("error").innerHTML =
+            "Password tidak sama";
 
-if(password!==konfirmasi){
+        return;
+    }
 
-document.getElementById(
-"error"
-).innerHTML=
-"Password tidak sama"
+    try {
 
-return
+        console.log("SEBELUM FETCH");
 
-}
+        const response = await fetch(
+            "https://bella-motor-production.up.railway.app/api/register",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nama,
+                    username,
+                    password
+                })
+            }
+        );
 
-try{
+        console.log("SETELAH FETCH");
+        console.log(response);
 
-const response=
-await fetch(
-"https://bella-motor-production.up.railway.app/api/register",
-{
+        const data = await response.json();
 
-method:"POST",
+        console.log("DATA DARI SERVER:");
+        console.log(data);
 
-headers:{
-"Content-Type":
-"application/json"
-},
+        if (data.success) {
 
-body:JSON.stringify({
+            alert("Registrasi berhasil");
 
-nama,
-username,
-password
+            window.location.href = "login.html";
 
-})
+        } else {
 
-}
+            document.getElementById("error").innerHTML =
+                data.message;
 
-)
+        }
 
-const data=
-await response.json()
+    } catch (error) {
 
-if(data.success){
+        console.log("ERROR:");
+        console.log(error);
 
-window.location.href=
-"login.html"
-
-}
-
-}catch(error){
-
-console.log(error)
-
-}
+        document.getElementById("error").innerHTML =
+            "Server tidak terhubung";
+    }
 
 }
